@@ -169,3 +169,21 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ignore SQLite database
+db.sqlite3
+
+# Ignore Python bytecode files
+*.pyc
+
+# Ignore MacOS metadata
+.DS_Store
+
+# Ignore Python cache directories
+__pycache__/
+
+# Ignore sensitive key files
+*.key
+
+# Ignore Windows metadata files
+thumbs.db
