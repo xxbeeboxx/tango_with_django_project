@@ -55,9 +55,9 @@ def populate():
 
     # Dictionary containing categories and their corresponding pages
     cats = {
-        'Python': {'pages': python_pages},  # Category "Python" and its pages
-        'Django': {'pages': django_pages},  # Category "Django" and its pages
-        'Other Frameworks': {'pages': other_pages}  # Category "Other Frameworks" and its pages
+        'Python': {'pages': python_pages, 'views': 128, 'likes': 64},
+        'Django': {'pages': django_pages, 'views': 64, 'likes': 32},
+        'Other Frameworks': {'pages': other_pages, 'views': 32, 'likes': 16}
     }
 
     # If you want to add more categories or pages,
@@ -65,7 +65,7 @@ def populate():
 
     # Loop through each category in the dictionary
     for cat, cat_data in cats.items():
-        c = add_cat(cat)  # Add the category to the database
+        c = add_cat(cat, cat_data['views'], cat_data['likes'])  # Pass the expected values
         for p in cat_data['pages']:  # Loop through pages in this category
             add_page(c, p['title'], p['url'])  # Add the page to the category
 

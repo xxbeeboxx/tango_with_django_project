@@ -7,9 +7,6 @@ class Category(models.Model):
     views = models.IntegerField(default=0) #field for tracking views.
     likes = models.IntegerField(default=0) #field for tracking likes.
 
-    def __str__(self):
-        return self.name
-
     class Meta:
         verbose_name_plural = 'Categories'
 
