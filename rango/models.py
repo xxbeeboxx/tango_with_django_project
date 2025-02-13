@@ -12,14 +12,13 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
 
-def save(self, *args, **kwargs):
-    self.slug = slugify(self.name)
-    super(Category, self).save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Category, self).save(*args, **kwargs)
 
 
-
-def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name
 
 class Page(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE) #one to many relationship for each category and pages

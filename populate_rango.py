@@ -1,5 +1,5 @@
 import os  # Import the os module to interact with the operating system
-
+import random
 # Set the Django settings module environment variable
 os.environ.setdefault('DJANGO_SETTINGS_MODULE',
                       'tango_with_django_project.settings')
@@ -75,7 +75,9 @@ def populate():
             print(f'- {c}: {p}')  # Print category name and page title
 
 
-def add_page(cat, title, url, views=0):
+def add_page(cat, title, url, views=None):
+    if views is None:
+        views = random.randint(1, 100)  # assign random views (1-100)
     """
     Adds a page to the database.
     If the page already exists, it is retrieved instead.
