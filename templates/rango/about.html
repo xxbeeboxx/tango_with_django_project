@@ -1,20 +1,19 @@
-<!DOCTYPE html>
+{% extends 'rango/base.html' %}
 {% load static %}
-<html>
-<head>
-    <title>Rango - About</title>
-</head>
-<body>
+
+{% block title_block %}
+    About Rango
+{% endblock %}
+
+{% block body_block %}
     <h1>Rango says...</h1>
     <p>here is the about page.</p>
     <p>This tutorial has been put together by <strong>bayan</strong>.</p>
 
+    <!-- ✅ Keeps both images as per the book -->
     <img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango" />
-
-    <img src="/media/cat.jpg" alt="Picture of a Cat" />
+    <img src="{{ MEDIA_URL }}cat.jpg" alt="Picture of a Cat" />
 
     <br>
-    <a href="{% url 'index' %}">Return to the Index Page</a>
-</body>
-</html>
-
+    <a href="{% url 'rango:index' %}">Return to the Index Page</a>
+{% endblock %}
