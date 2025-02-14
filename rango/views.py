@@ -25,12 +25,11 @@ def index(request):
     # Render the response and send it back!
     return render(request, 'rango/index.html', context=context_dict)
 
-
 def about(request):
-    return HttpResponse("Rango says here is the about page.<br><a href='/rango/'>Index</a>")
+    print(request.method)  # Shows GET or POST
+    print(request.user)  # Prints the logged-in user or 'AnonymousUser'
+    return render(request, 'rango/about.html', {})
 
-def about(request):
-    return render(request, 'rango/about.html')
 
 def show_category(request, category_name_slug):
     # Create a context dictionary which we can pass
