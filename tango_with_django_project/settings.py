@@ -142,7 +142,8 @@ MEDIA_URL = '/media/'
 LOGIN_URL = 'rango:login'
 
 # Session expiry time (in seconds)
-SESSION_COOKIE_AGE = 30  # Set session timeout to 5 minutes (300 seconds)
+SESSION_COOKIE_AGE = 300  # Set session timeout to 5 minutes (300 seconds)
 
 # Set the session to expire when the user closes the browser
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
